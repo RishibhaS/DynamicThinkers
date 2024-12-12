@@ -1,4 +1,3 @@
-import os
 import numpy as np
 import tensorflow as tf
 from sklearn.metrics import classification_report, confusion_matrix
@@ -40,7 +39,7 @@ def evaluate_model(model_path, data_path):
 
     # Evaluate the model
     print("Evaluating model...")
-    test_loss, test_accuracy = model.evaluate(X_test, y_test, verbose=1)
+    test_loss, test_accuracy = model.evaluate(X_1_test, y_test, verbose=1)
     print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
 
     # Predict and generate metrics

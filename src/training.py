@@ -2,8 +2,8 @@ import os
 
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
 from src.pretraining import update_train_folder, update_valid_folder
-from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
-from keras._tf_keras.keras.models import Sequential
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Sequential
 
 
 def build_model(input_shape=(128, 128, 1)):
