@@ -46,10 +46,10 @@ def preprocess_signature_image(image_path):
   #  img_resized = img_resized / 255.0  # Assuming model was trained with normalized data
 
     # Expand the dimensions to match the input format (e.g., (1, 128, 128, 1) for grayscale)
-    img_resized = np.expand_dims(img_normalized, axis=-1)  # Add the channel dimension
-    img_resized = np.expand_dims(img_normalized, axis=0)   # Add the batch dimension (e.g., (1, 128, 128, 1))
+    img = np.expand_dims(img_normalized, axis=-1)  # Add the channel dimension
+    img = np.expand_dims(img, axis=0)   # Add the batch dimension (e.g., (1, 128, 128, 1))
 
-    return img_resized
+    return img
 
 
 # Function to predict if a signature is forged or genuine
@@ -68,7 +68,7 @@ def predict_signature(img_path):
 
     # Get model prediction
     prediction = model.predict(img)
-    predicted_class = np.argmax(prediction, axis=0)[0]
+    predicted_class = np.argmax(prediction)
     ##predicted_class = np.argmax(prediction, axis=1)[0] // forged signature
 
 
